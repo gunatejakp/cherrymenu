@@ -3,291 +3,241 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cherry Dhaba & Restaurant – Menu</title>
+<title>Cherry Dhaba & Restaurant | QR Menu</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #1b1b1b;
-  color: #ffffff;
+:root{
+  --gold:#ffb703;
+  --dark:#0b0b0b;
+  --card:#141414;
 }
 
-/* HEADER */
-header {
-  background: #7a0000;
-  padding: 22px;
-  text-align: center;
-}
-header h1 {
-  margin: 0;
-  font-size: 26px;
-}
-header p {
-  margin-top: 6px;
-  font-size: 14px;
-  color: #ffd9b3;
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#000;
+  color:#eee;
 }
 
-/* NAV BUTTONS */
-.menu-nav {
-  position: sticky;
-  top: 0;
-  background: #111;
-  padding: 10px;
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  z-index: 999;
-}
-.menu-nav a {
-  background: #ffb703;
-  color: #000;
-  text-decoration: none;
-  padding: 7px 14px;
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: bold;
-  white-space: nowrap;
+/* TOP BAR */
+.top-bar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 16px;
+  background:#000;
 }
 
-/* SECTION */
-.section {
-  padding: 20px;
-  border-bottom: 1px solid #333;
-}
-.section h2 {
-  color: #ffb703;
-  font-size: 22px;
-  margin-bottom: 15px;
-  border-left: 4px solid #ffb703;
-  padding-left: 10px;
+.since{
+  border:1px solid var(--gold);
+  color:var(--gold);
+  padding:5px 14px;
+  border-radius:18px;
+  font-size:12px;
+  font-weight:600;
 }
 
-/* MENU ITEM */
-.menu-item {
-  margin-bottom: 10px;
+.top-actions{
+  display:flex;
+  gap:10px;
 }
-.menu-item h3 {
-  margin: 0;
-  font-size: 15.5px;
+
+.top-btn{
+  background:var(--gold);
+  color:#000;
+  text-decoration:none;
+  padding:8px 16px;
+  border-radius:20px;
+  font-size:13px;
+  font-weight:700;
 }
-.menu-item p {
-  margin: 4px 0 0;
-  font-size: 13px;
-  color: #ccc;
+
+/* HERO */
+.hero{
+  padding:16px;
+  text-align:center;
+  background:linear-gradient(#000,#050505);
+}
+
+.hero h1{
+  font-family:'Baloo 2',cursive;
+  color:var(--gold);
+  margin:6px 0 4px;
+}
+
+.hero p{
+  font-size:14px;
+  color:#ccc;
+  margin:0;
+}
+
+/* SEARCH */
+.search-box{
+  padding:12px;
+  background:#0e0e0e;
+}
+.search-box input{
+  width:100%;
+  padding:14px;
+  border-radius:14px;
+  border:none;
+  font-size:15px;
+}
+
+/* CATEGORY PILLS */
+.menu-nav{
+  display:flex;
+  gap:10px;
+  padding:12px;
+  background:#0b0b0b;
+  overflow-x:auto;
+}
+.menu-nav a{
+  background:var(--gold);
+  color:#000;
+  text-decoration:none;
+  padding:8px 18px;
+  border-radius:20px;
+  font-weight:600;
+  white-space:nowrap;
+}
+
+/* SECTIONS */
+.section{
+  padding:16px;
+}
+.section-title{
+  font-family:'Baloo 2',cursive;
+  font-size:22px;
+  color:var(--gold);
+  border-left:5px solid var(--gold);
+  padding-left:12px;
+  margin-bottom:12px;
+}
+
+/* FULL-WIDTH MENU CARDS */
+.menu-card{
+  background:linear-gradient(145deg,#1a1a1a,#101010);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:14px;
+}
+.menu-card h3{
+  margin:0;
+  font-size:16px;
+}
+.price{
+  margin-top:6px;
+  font-size:14px;
+  color:#ccc;
 }
 
 /* FOOTER */
-footer {
-  background: #111;
-  text-align: center;
-  padding: 15px;
-  font-size: 12px;
-  color: #aaa;
+footer{
+  text-align:center;
+  font-size:12px;
+  color:#888;
+  padding:18px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Cherry Dhaba & Restaurant </h1>
-  <p>The Taste You Expect</p>
-  <p>QR Menu</p>
-</header>
-
-<nav class="menu-nav">
-  <a href="#nonveg-curries">🍗 Non-Veg Curries</a>
-  <a href="#nonveg-starters">🔥 Non-Veg Starters</a>
-  <a href="#prawns">🦐 Prawns</a>
-  <a href="#fish">🐟 Fish</a>
-  <a href="#liver">🐔 Liver</a>
-  <a href="#biryani">🍚 Biryani</a>
-  <a href="#egg-starters">🍳 Egg Starters</a>
-  <a href="#rice">🍚 Rice</a>
-  <a href="#rotis">🫓 Rotis & Naan</a>
-  <a href="#veg-starters">🥦 Veg Starters</a>
-  <a href="#veg-curries">🥘 Veg Curries</a>
-</nav>
-
-<!-- NON-VEG CURRIES -->
-<div class="section" id="nonveg-curries">
-<h2>Non-Veg Curries</h2>
-<div class="menu-item"><h3>Chicken Curry (Classic)</h3></div>
-<div class="menu-item"><h3>Butter Chicken (BL)</h3></div>
-<div class="menu-item"><h3>Chicken Kolhapur</h3></div>
-<div class="menu-item"><h3>Chicken Jaipuri</h3></div>
-<div class="menu-item"><h3>Kadai Chicken</h3></div>
-<div class="menu-item"><h3>Kadai Chicken (BL)</h3></div>
-<div class="menu-item"><h3>Chicken Chat Pat (BL)</h3></div>
-<div class="menu-item"><h3>Ginger Chicken</h3></div>
-<div class="menu-item"><h3>Punjabi Chicken</h3></div>
-<div class="menu-item"><h3>Telangana Chicken</h3></div>
-<div class="menu-item"><h3>Chicken Sahadani (BL)</h3></div>
-<div class="menu-item"><h3>Handi Chicken</h3></div>
-<div class="menu-item"><h3>Chicken Maharani</h3></div>
-<div class="menu-item"><h3>Rara Chicken</h3></div>
-<div class="menu-item"><h3>Kaju Chicken</h3></div>
-<div class="menu-item"><h3>Chicken Tikka Masala</h3></div>
-<div class="menu-item"><h3>Natukodi Curry</h3></div>
-<div class="menu-item"><h3>Mogalai Chicken</h3></div>
-<div class="menu-item"><h3>Fish Curry</h3></div>
-<div class="menu-item"><h3>Prawns Curry</h3></div>
-<div class="menu-item"><h3>Chicken Liver Curry</h3></div>
-<div class="menu-item"><h3>Egg Curry (Classic)</h3></div>
-<div class="menu-item"><h3>Egg Tomato</h3></div>
-<div class="menu-item"><h3>Egg Keema</h3></div>
-<div class="menu-item"><h3>Egg Masala</h3></div>
-<div class="menu-item"><h3>Egg Pepper Curry</h3></div>
-<div class="menu-item"><h3>Egg Butter Masala</h3></div>
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="since">Since 2013</div>
+  <div class="top-actions">
+    <a href="tel:+919063249532" class="top-btn">Order Call</a>
+    <a href="https://www.google.com/maps/dir//Cherry+Dhaba+%26+Restaurant,+Suryapet+road,+Thorrur+-+Thirumalagiri+Rd,+Mali+Puram,+Telangana+508223/@17.4633327,78.3380127,9z/data=!4m17!1m8!3m7!1s0x3a34b4173e08e2b1:0x811f61a4970e846f!2sCherry+Dhaba+%26+Restaurant!8m2!3d17.4628412!4d79.4575429!15sCgxjaGVycnkgZGhhYmFaDiIMY2hlcnJ5IGRoYWJhkgERaW5kaWFuX3Jlc3RhdXJhbnTgAQA!16s%2Fg%2F11c5s4fq5t!4m7!1m0!1m5!1m1!1s0x3a34b4173e08e2b1:0x811f61a4970e846f!2m2!1d79.4575429!2d17.4628412?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D" 
+       class="top-btn" target="_blank">Get Directions</a>
+  </div>
 </div>
 
-<!-- NON-VEG STARTERS -->
-<div class="section" id="nonveg-starters">
-<h2>Non-Veg Starters</h2>
-<div class="menu-item"><h3>Chicken 65</h3></div>
-<div class="menu-item"><h3>Chicken Manchuria</h3></div>
-<div class="menu-item"><h3>Chilli Chicken</h3></div>
-<div class="menu-item"><h3>Chicken Fry</h3></div>
-<div class="menu-item"><h3>Dry Chicken</h3></div>
-<div class="menu-item"><h3>Chicken Roast</h3></div>
-<div class="menu-item"><h3>Apollo Chicken</h3></div>
-<div class="menu-item"><h3>Pepper Chicken</h3></div>
-<div class="menu-item"><h3>Chicken Fried Wings (8 pcs)</h3></div>
-<div class="menu-item"><h3>Chicken Drumstick (6 pcs)</h3></div>
-<div class="menu-item"><h3>Chicken Rajadhani</h3></div>
-<div class="menu-item"><h3>Chicken Majestic</h3></div>
-<div class="menu-item"><h3>Chicken 555</h3></div>
-<div class="menu-item"><h3>Chicken Tikka (8 pcs)</h3></div>
-<div class="menu-item"><h3>Chicken Kabab (2 pcs)</h3></div>
-<div class="menu-item"><h3>Dragon Chicken</h3></div>
-<div class="menu-item"><h3>Yoga Chicken</h3></div>
-<div class="menu-item"><h3>Natukodi Fry</h3></div>
-<div class="menu-item"><h3>Natukodi Dry</h3></div>
+<!-- HERO -->
+<section class="hero">
+  <h1>Cherry Dhaba & Restaurant</h1>
+  <p>The Taste You Expect<br>Highway Taste • Home Feel</p>
+</section>
+
+<!-- SEARCH -->
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Search dish (chicken, paneer, biryani)">
 </div>
 
-<!-- PRAWNS -->
-<div class="section" id="prawns">
-<h2>Prawn Items</h2>
-<div class="menu-item"><h3>Prawns Fry</h3></div>
-<div class="menu-item"><h3>Loose Prawns</h3></div>
-<div class="menu-item"><h3>Chilli Prawns</h3></div>
-<div class="menu-item"><h3>Pepper Prawns</h3></div>
-<div class="menu-item"><h3>Prawns Roast</h3></div>
-</div>
+<!-- CATEGORY NAV -->
+<nav class="menu-nav" id="menuNav"></nav>
 
-<!-- FISH -->
-<div class="section" id="fish">
-<h2>Fish Items</h2>
-<div class="menu-item"><h3>Fish Fry</h3></div>
-<div class="menu-item"><h3>Fish Roast</h3></div>
-<div class="menu-item"><h3>Pepper Fish Fry</h3></div>
-<div class="menu-item"><h3>Dry Fish</h3></div>
-</div>
+<!-- MENU FROM CSV -->
+<div id="menuContainer"></div>
 
-<!-- LIVER -->
-<div class="section" id="liver">
-<h2>Liver Items</h2>
-<div class="menu-item"><h3>Chicken Liver Fry</h3></div>
-<div class="menu-item"><h3>Chicken Liver Roast</h3></div>
-<div class="menu-item"><h3>Pepper Liver Fry</h3></div>
-</div>
-
-<!-- BIRYANI -->
-<div class="section" id="biryani">
-<h2>Biryani</h2>
-<div class="menu-item"><h3>Chicken Dum Biryani (Single / Full / Family / Jumbo)</h3></div>
-<div class="menu-item"><h3>Chicken Fry Piece Biryani (Single / Full / Family / Jumbo)</h3></div>
-<div class="menu-item"><h3>Chicken Special Biryani (Full / Family)</h3></div>
-<div class="menu-item"><h3>Dilkhush Chicken Biryani – Full</h3></div>
-<div class="menu-item"><h3>Prawns Biryani (Full / Family)</h3></div>
-<div class="menu-item"><h3>Fish Biryani – Full</h3></div>
-<div class="menu-item"><h3>Natukodi Chicken Biryani – Full</h3></div>
-<div class="menu-item"><h3>Egg Biryani</h3></div>
-<div class="menu-item"><h3>Special Egg Biryani – Full</h3></div>
-<div class="menu-item"><h3>Plain / Veg / Paneer / Mushroom / Kaju Biryani</h3></div>
-</div>
-
-<!-- EGG STARTERS -->
-<div class="section" id="egg-starters">
-<h2>Egg Starters</h2>
-<div class="menu-item"><h3>Boiled Eggs</h3></div>
-<div class="menu-item"><h3>Egg Roast</h3></div>
-<div class="menu-item"><h3>Egg Bhurji</h3></div>
-<div class="menu-item"><h3>Egg Manchurian</h3></div>
-<div class="menu-item"><h3>Chilli Egg</h3></div>
-<div class="menu-item"><h3>Egg 65</h3></div>
-</div>
-
-<!-- RICE -->
-<div class="section" id="rice">
-<h2>Rice</h2>
-<div class="menu-item"><h3>Plain Rice</h3></div>
-<div class="menu-item"><h3>Jeera Rice</h3></div>
-<div class="menu-item"><h3>Egg Fried Rice</h3></div>
-<div class="menu-item"><h3>Veg Fried Rice</h3></div>
-<div class="menu-item"><h3>Special Egg Fried Rice</h3></div>
-<div class="menu-item"><h3>Special Chicken Fried Rice</h3></div>
-<div class="menu-item"><h3>Curd Rice</h3></div>
-<div class="menu-item"><h3>Special Curd Rice</h3></div>
-</div>
-
-<!-- ROTIS -->
-<div class="section" id="rotis">
-<h2>Rotis & Naan</h2>
-<div class="menu-item"><h3>Pulka</h3></div>
-<div class="menu-item"><h3>Roti</h3></div>
-<div class="menu-item"><h3>Butter Roti</h3></div>
-<div class="menu-item"><h3>Plain Naan</h3></div>
-<div class="menu-item"><h3>Butter Naan</h3></div>
-<div class="menu-item"><h3>Garlic Naan</h3></div>
-<div class="menu-item"><h3>Coriander Naan</h3></div>
-</div>
-
-<!-- VEG STARTERS -->
-<div class="section" id="veg-starters">
-<h2>Veg Starters</h2>
-<div class="menu-item"><h3>French Fries</h3></div>
-<div class="menu-item"><h3>Crispy Corn</h3></div>
-<div class="menu-item"><h3>Boiled Corn</h3></div>
-<div class="menu-item"><h3>Veg Manchurian</h3></div>
-<div class="menu-item"><h3>Paneer Tikka</h3></div>
-<div class="menu-item"><h3>Paneer Manchurian</h3></div>
-<div class="menu-item"><h3>Paneer 65</h3></div>
-<div class="menu-item"><h3>Kaju Roast</h3></div>
-<div class="menu-item"><h3>Mushroom Manchurian</h3></div>
-<div class="menu-item"><h3>Mushroom Fry</h3></div>
-<div class="menu-item"><h3>Mushroom 65</h3></div>
-</div>
-
-<!-- VEG CURRIES -->
-<div class="section" id="veg-curries">
-<h2>Veg Curries</h2>
-<div class="menu-item"><h3>Tomato Curry</h3></div>
-<div class="menu-item"><h3>Kaju Tomato Curry</h3></div>
-<div class="menu-item"><h3>Mixed Vegetable Curry</h3></div>
-<div class="menu-item"><h3>Veg Chat Pat</h3></div>
-<div class="menu-item"><h3>Palak Paneer</h3></div>
-<div class="menu-item"><h3>Paneer Butter Masala</h3></div>
-<div class="menu-item"><h3>Paneer Kaju Curry</h3></div>
-<div class="menu-item"><h3>Kaju Paneer</h3></div>
-<div class="menu-item"><h3>Mushroom Curry</h3></div>
-<div class="menu-item"><h3>Butter Mushroom</h3></div>
-<div class="menu-item"><h3>Methi Chaman Curry</h3></div>
-<div class="menu-item"><h3>Paneer Lababdar</h3></div>
-<div class="menu-item"><h3>Paneer Chat Pat</h3></div>
-<div class="menu-item"><h3>Aloo Gobi Masala</h3></div>
-<div class="menu-item"><h3>Dal Fry</h3></div>
-<div class="menu-item"><h3>Dal Tadka</h3></div>
-<div class="menu-item"><h3>Malai Kupta Curry</h3></div>
-</div>
-
+<!-- FOOTER -->
 <footer>
-© Cherry Dhaba & Restaurant | The Taste You Expect
+“Pet bhar ke khao, dil khush ho jaye”<br>
+© Cherry Dhaba & Restaurant
 </footer>
+
+<script>
+fetch("menu.csv")
+.then(res => res.text())
+.then(text => {
+  const rows = text.split("\n").slice(1);
+  const menu = {};
+
+  rows.forEach(r => {
+    if (!r.trim()) return;
+    const [cat, item, price] = r.split(",");
+    if (!menu[cat]) menu[cat] = [];
+    menu[cat].push({ item, price });
+  });
+
+  buildNav(menu);
+  buildMenu(menu);
+});
+
+function buildNav(menu){
+  const nav = document.getElementById("menuNav");
+  Object.keys(menu).forEach(cat => {
+    const id = cat.replace(/\s+/g,'').toLowerCase();
+    nav.innerHTML += `<a href="#${id}">${cat}</a>`;
+  });
+}
+
+function buildMenu(menu){
+  const box = document.getElementById("menuContainer");
+  Object.keys(menu).forEach(cat => {
+    const id = cat.replace(/\s+/g,'').toLowerCase();
+    let html = `
+      <section class="section" id="${id}">
+        <div class="section-title">${cat}</div>
+    `;
+    menu[cat].forEach(i => {
+      html += `
+        <div class="menu-card menu-item">
+          <h3>${i.item}</h3>
+          <div class="price">${i.price || ""}</div>
+        </div>
+      `;
+    });
+    html += `</section>`;
+    box.innerHTML += html;
+  });
+}
+
+/* SEARCH */
+document.getElementById("searchInput").addEventListener("keyup", e => {
+  const val = e.target.value.toLowerCase();
+  document.querySelectorAll(".menu-item").forEach(item => {
+    item.style.display = item.innerText.toLowerCase().includes(val)
+      ? "block"
+      : "none";
+  });
+});
+</script>
 
 </body>
 </html>
