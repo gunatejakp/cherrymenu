@@ -179,6 +179,42 @@ body{
   background:linear-gradient(#080808,#000);
   border-top:1px solid rgba(244,180,26,.25);
 }
+.review-section{
+  padding:24px 16px;
+  background:linear-gradient(#060606,#000);
+  border-top:1px solid rgba(244,180,26,.25);
+  text-align:center;
+}
+
+.review-card{
+  display:inline-block;
+  padding:16px 24px;
+  border-radius:18px;
+  background:linear-gradient(145deg,#1b1b1b,#0e0e0e);
+  border:1px solid rgba(244,180,26,.25);
+  box-shadow:0 8px 28px rgba(0,0,0,.75);
+}
+
+.review-text{
+  font-size:13px;
+  color:#ccc;
+  margin-bottom:10px;
+}
+
+.review-btn{
+  display:inline-block;
+  padding:11px 24px;
+  border-radius:24px;
+  background:linear-gradient(145deg,#f4b41a,#ffd36a);
+  color:#000;
+  font-size:14px;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 6px 20px rgba(244,180,26,.4);
+}
+.review-btn:active{
+  transform:scale(.96);
+}
 
 .footer-brand{
   font-family:'Playfair Display',serif;
@@ -246,6 +282,21 @@ body{
 
 <!-- MENU CONTENT -->
 <div id="menuContainer"></div>
+<!-- WRITE A GOOGLE REVIEW -->
+<section class="review-section">
+  <div class="review-card">
+    <div class="review-text">
+      Enjoyed our food? Your Google review helps us grow ❤️
+    </div>
+
+    <a 
+      href="https://search.google.com/local/writereview?placeid=ChIJseIIPhe0NDoRb4QOl6RhH4E"
+      target="_blank"
+      class="review-btn">
+       Rate us on Google
+    </a>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer class="footer">
