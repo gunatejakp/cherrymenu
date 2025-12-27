@@ -65,7 +65,7 @@ body{
 }
 .hero h1{
   font-family:'Great Vibes',cursive;
-  font-size:37px;
+  font-size:38px;
   color:var(--gold);
   margin:0 0 8px;
 }
@@ -82,12 +82,12 @@ body{
   color:var(--gold);
 }
 
-/* ✅ MENU INDEX (EASY FINDING) */
+/* MENU INDEX (AUTO FROM CSV) */
 .menu-index{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:12px;
-  padding:20px 16px;
+  padding:14px 16px 18px;
   background:#080808;
   border-bottom:1px solid rgba(244,180,26,.25);
 }
@@ -113,7 +113,7 @@ body{
 }
 
 /* SECTIONS */
-.section{ padding:30px 16px; }
+.section{ padding:5px 16px; }
 .section-title{
   font-family:'Playfair Display',serif;
   font-size:24px;
@@ -124,7 +124,7 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  margin:10px 0 16px;
+  margin:6px 0 10px;
 }
 .section-divider::before,
 .section-divider::after{
@@ -138,37 +138,36 @@ body{
   color:var(--gold);
   font-size:10px;
 }
-.section-desc{
-  color:#9f9f9f;
-  font-size:13px;
-  text-align:center;
-  margin-bottom:20px;
-}
 
 /* MENU CARD */
 .menu-card{
   background:linear-gradient(145deg,#1b1b1b,#0f0f0f);
   border-radius:16px;
   padding:18px;
-  margin-bottom:16px;
+  margin-bottom:8px;
   border:1px solid rgba(244,180,26,.15);
 }
 .menu-item{
   display:flex;
-  justify-content:space-between;
-  align-items:center;
+  align-items:flex-start;
   gap:12px;
 }
+
 .menu-item h3{
   margin:0;
   font-size:16.5px;
+  font-weight:500;
+  flex:1;                 /* ⭐ key */
+  line-height:1.35;
 }
+
 .price{
   font-size:16px;
   color:var(--gold);
   font-weight:600;
-  white-space:nowrap;
+  white-space:nowrap;     /* ⭐ keeps ₹ 480 in one line */
 }
+
 
 /* REVIEW */
 .review-section{
@@ -207,12 +206,6 @@ body{
   font-size:18px;
   color:var(--gold);
 }
-.footer-tagline{
-  font-size:12px;
-  color:#bbb;
-  text-transform:uppercase;
-  margin-bottom:10px;
-}
 .footer-info{
   font-size:12px;
   color:#9f9f9f;
@@ -245,15 +238,8 @@ body{
   <p>The Taste You Expect <span>Cherry’s Super Spicy Delight Menu</span></p>
 </section>
 
-<!-- ✅ MENU INDEX -->
-<div class="menu-index">
-  <a href="#nonvegstarters">Non-Veg Starters</a>
-  <a href="#nonvegcurries">Non-Veg Curries</a>
-  <a href="#biryani">Biryani</a>
-  <a href="#vegstarters">Veg Starters</a>
-  <a href="#vegcurries">Veg Curries</a>
-  <a href="#rotisnaan">Rotis & Naan</a>
-</div>
+<!-- AUTO MENU INDEX -->
+<div class="menu-index" id="menuIndex"></div>
 
 <div class="notice">
   Please allow <strong>15 minutes</strong> for order preparation.
@@ -263,7 +249,7 @@ body{
 
 <section class="review-section">
   <div class="review-card">
-    Enjoyed our food? Your Google review helps us grow!
+    Enjoyed our food?
     <br>
     <a href="https://search.google.com/local/writereview?placeid=ChIJseIIPhe0NDoRb4QOl6RhH4E"
        target="_blank" class="review-btn">Rate us on Google</a>
@@ -272,57 +258,52 @@ body{
 
 <footer class="footer">
   <div class="footer-brand">Cherry Dhaba & Restaurant</div>
-  <div class="footer-tagline">The Taste You Expect</div>
-  <div class="footer-info">
-    Freshly prepared • Quality ingredients • Hygienic kitchen
-  </div>
-  <div class="footer-note">
-    Thank you for dining with us. Please visit again.
-  </div>
-  <div class="footer-info">
-  FSSAI Certified • Food Safety & Standards Authority of India
-</div>
-<div class="fssai-badge">
-  ✔ FSSAI Certified
-</div>
-
+  <div class="footer-info">Freshly prepared • Quality ingredients • Hygienic kitchen</div>
+  <div class="footer-info">FSSAI Certified • Food Safety & Standards Authority of India</div>
+  <div class="footer-note">Thank you for dining with us. Please visit again.</div>
   <div class="footer-copy">© 2025 Cherry Dhaba & Restaurant</div>
 </footer>
+
 <script>
 fetch("menu.csv")
-.then(res=>res.text())
-.then(text=>{
-  const rows=text.split("\n").slice(1);
-  const menu={};
+.then(res => res.text())
+.then(text => {
+  const rows = text.split("\n").slice(1);
+  const menu = {};
 
-  rows.forEach(r=>{
-    if(!r.trim())return;
-    const [cat,item,price]=r.split(",");
-    if(!menu[cat])menu[cat]=[];
-    menu[cat].push({item,price});
+  rows.forEach(r => {
+    if (!r.trim()) return;
+    const [cat, item, price] = r.split(",");
+    if (!menu[cat]) menu[cat] = [];
+    menu[cat].push({ item, price });
   });
 
-  const box=document.getElementById("menuContainer");
+  const index = document.getElementById("menuIndex");
+  const box = document.getElementById("menuContainer");
 
-  Object.keys(menu).forEach(cat=>{
-    const id=cat.replace(/\s+/g,'').toLowerCase();
-    let html=`<section class="section" id="${id}">
+  Object.keys(menu).forEach(cat => {
+    const id = cat.replace(/\s+/g,'').toLowerCase();
+
+    /* Build menu index */
+    index.innerHTML += `<a href="#${id}">${cat}</a>`;
+
+    /* Build sections */
+    let html = `<section class="section" id="${id}">
       <div class="section-title">${cat}</div>
-      <div class="section-divider"><span>✦ ✦ ✦</span></div>
-      `;
+      <div class="section-divider"><span>✦ ✦ ✦</span></div>`;
 
-    menu[cat].forEach(i=>{
-      html+=`
+    menu[cat].forEach(i => {
+      html += `
       <div class="menu-card">
         <div class="menu-item">
           <h3>${i.item}</h3>
-          <div class="price">₹ ${i.price||""}</div>
+          <div class="price">₹ ${i.price || ""}</div>
         </div>
       </div>`;
     });
 
-    html+=`</section>`;
-    box.innerHTML+=html;
+    html += `</section>`;
+    box.innerHTML += html;
   });
 });
 </script>
