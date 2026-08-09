@@ -1,0 +1,183 @@
+.featured-section {
+  padding: 24px 16px;
+  background: linear-gradient(180deg, #3A0A10 0%, #5C101B 100%);
+  color: #FFFDF9;
+  border-bottom: 3px solid var(--gold-primary);
+}
+
+.featured-header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.featured-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-light);
+  padding: 3px 12px;
+  border-radius: var(--radius-full);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 6px;
+}
+
+.gold-icon {
+  color: var(--gold-primary);
+}
+
+.featured-title {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  color: #F7E49A;
+  line-height: 1.2;
+}
+
+.featured-subtitle {
+  font-size: 12px;
+  color: rgba(255, 253, 249, 0.75);
+  margin-top: 4px;
+}
+
+.featured-grid {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: none;
+}
+
+.featured-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.featured-card {
+  min-width: 250px;
+  max-width: 270px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  flex-shrink: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.featured-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-primary);
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.25);
+}
+
+.featured-image-wrapper {
+  position: relative;
+  height: 140px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.featured-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.featured-card:hover .featured-img {
+  transform: scale(1.08);
+}
+
+.featured-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.featured-card-badges {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 2;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  font-size: 10px;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.badge.chef {
+  background: var(--maroon-primary);
+  color: #F7E49A;
+  border: 1px solid var(--gold-primary);
+}
+
+.badge.popular {
+  background: var(--gold-primary);
+  color: #1F1617;
+}
+
+.badge.must-try {
+  background: #DC2626;
+  color: #FFFFFF;
+}
+
+.featured-price-tag {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: var(--gold-gradient);
+  color: #1F1617;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.featured-card-content {
+  padding: 14px;
+}
+
+.featured-card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.featured-dish-name {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFDF9;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.featured-dish-desc {
+  font-size: 11.5px;
+  color: rgba(255, 253, 249, 0.75);
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

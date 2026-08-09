@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Color Palette - Royal Indian Dhaba Aesthetic */
+  --bg-cream: #FAF7F2;
+  --bg-ivory: #FFFDF9;
+  --bg-card: #FFFFFF;
+  --bg-dark-overlay: rgba(26, 12, 14, 0.94);
+  
+  --maroon-deep: #3A0A10;
+  --maroon-primary: #5C101B;
+  --maroon-accent: #7D1726;
+  --maroon-subtle: #FAF0F1;
+  
+  --gold-primary: #D4AF37;
+  --gold-light: #F7E49A;
+  --gold-amber: #E5B840;
+  --gold-dark: #A88219;
+  --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #F7E49A 50%, #B89020 100%);
+  
+  --text-main: #1F1617;
+  --text-muted: #6C5B5E;
+  --text-light: #A39295;
+  --text-on-dark: #FAF7F2;
+  
+  --veg-color: #16A34A;
+  --nonveg-color: #DC2626;
+
+  --shadow-sm: 0 2px 8px rgba(92, 16, 27, 0.06);
+  --shadow-md: 0 6px 20px rgba(92, 16, 27, 0.09);
+  --shadow-lg: 0 12px 32px rgba(92, 16, 27, 0.14);
+  --shadow-gold: 0 4px 16px rgba(212, 175, 55, 0.25);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  --font-serif: 'Playfair Display', serif;
+  --font-cursive: 'Great Vibes', cursive;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset & Global Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-cream);
+  color: var(--text-main);
+  line-height: 1.5;
+  overflow-x: hidden;
+  position: relative;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(92, 16, 27, 0.03) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(92, 16, 27, 0.2);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--maroon-primary);
+}
+
+/* Typography Utilities */
+.font-cursive {
+  font-family: var(--font-cursive);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.gold-gradient-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Ornamental Divider */
+.gold-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 8px 0 16px;
+}
+
+.gold-ornament::before,
+.gold-ornament::after {
+  content: "";
+  height: 1px;
+  width: 50px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+}
+
+.gold-ornament span {
+  color: var(--gold-primary);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+/* Container */
+.app-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--bg-ivory);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
+}
+
+/* Veg / Non-Veg Indicator Icon */
+.food-type-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  padding: 2px;
+  flex-shrink: 0;
+}
+
+.food-type-icon.veg {
+  border: 1.5px solid var(--veg-color);
+}
+
+.food-type-icon.veg::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--veg-color);
+}
+
+.food-type-icon.non-veg {
+  border: 1.5px solid var(--nonveg-color);
+}
+
+.food-type-icon.non-veg::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 7px solid var(--nonveg-color);
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

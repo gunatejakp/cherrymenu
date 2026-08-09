@@ -1,0 +1,119 @@
+.search-section {
+  padding: 14px 16px;
+  background: var(--bg-ivory);
+  border-bottom: 1px solid rgba(92, 16, 27, 0.08);
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1.5px solid rgba(92, 16, 27, 0.15);
+  border-radius: var(--radius-full);
+  padding: 0 16px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.search-box:focus-within {
+  border-color: var(--maroon-primary);
+  box-shadow: 0 0 0 3px rgba(92, 16, 27, 0.1);
+}
+
+.search-icon {
+  color: var(--maroon-primary);
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--text-main);
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--text-light);
+}
+
+.clear-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.clear-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--maroon-primary);
+}
+
+.filter-pills {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(92, 16, 27, 0.15);
+  background: var(--bg-card);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-pill.active {
+  background: var(--maroon-primary);
+  color: #FFFDF9;
+  border-color: var(--maroon-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-pill.veg.active {
+  background: #065F46;
+  border-color: #065F46;
+}
+
+.filter-pill.non-veg.active {
+  background: #991B1B;
+  border-color: #991B1B;
+}
+
+.search-status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--maroon-subtle);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+}
+
+.reset-search {
+  background: none;
+  border: none;
+  color: var(--maroon-primary);
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: underline;
+}

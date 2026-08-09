@@ -1,0 +1,105 @@
+.entrance-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: radial-gradient(circle at center, #4A0E17 0%, #26050A 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.entrance-overlay.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.entrance-card {
+  text-align: center;
+  color: #FFFDF9;
+  max-width: 380px;
+  width: 100%;
+}
+
+.entrance-crest {
+  color: #D4AF37;
+  font-size: 20px;
+  margin-bottom: 8px;
+  letter-spacing: 4px;
+}
+
+.entrance-title {
+  font-family: var(--font-cursive);
+  font-size: 40px;
+  line-height: 1.1;
+  color: #F7E49A;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  margin-bottom: 6px;
+}
+
+.entrance-title.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.entrance-tagline {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #D4AF37;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+  margin-bottom: 16px;
+}
+
+.entrance-tagline.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.entrance-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.entrance-divider.active {
+  opacity: 1;
+}
+
+.entrance-divider span {
+  height: 1px;
+  width: 40px;
+  background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+}
+
+.entrance-divider .diamond {
+  color: #D4AF37;
+  font-size: 8px;
+}
+
+.entrance-action {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 253, 249, 0.7);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.4s ease 0.15s, transform 0.4s ease 0.15s;
+}
+
+.entrance-action.active {
+  opacity: 1;
+  transform: translateY(0);
+}
